@@ -113,7 +113,7 @@ ${taskList}
     console.log(
       '🕒 Starting optimized task reminder cron job with Redis caching...',
     );
-    nodeCron.schedule('*/1 * * * *', async () => {
+    nodeCron.schedule('*/10 * * * *', async () => {
       console.log(
         '🔍 Checking for tasks due within 30 minutes (with caching)...',
       );
@@ -237,7 +237,7 @@ ${taskList}
     console.log(
       '🕒 Starting optimized overdue task checker cron job with Redis caching...',
     );
-    nodeCron.schedule('*/1 * * * *', async () => {
+    nodeCron.schedule('*/30 * * * *', async () => {
       console.log('🔍 Checking for overdue tasks (with caching)...');
       try {
         const now = new Date();
