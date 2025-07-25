@@ -13,7 +13,9 @@ export class KeepAliveCronService implements OnModuleInit {
     nodeCron.schedule('*/10 * * * *', async () => {
       console.log('🔄 Running ping cron job to keep server alive');
       try {
-        const response = await axios.get(`${process.env.BACKEND_URL}/api/ping`);
+        const response = await axios.get(
+          `https://todoweb-backend.onrender.com/api/ping`,
+        );
         console.log('✅ Server is alive:', response.data);
       } catch (error) {
         console.error('❌ Error pinging server:', error.message);
