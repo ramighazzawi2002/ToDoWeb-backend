@@ -8,7 +8,7 @@ import {
   OnGatewayDisconnect,
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 dotenv.config();
 @WebSocketGateway({
   cors: {

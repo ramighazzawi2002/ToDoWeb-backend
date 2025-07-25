@@ -1,7 +1,7 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import * as nodeCron from 'node-cron';
 import axios from 'axios';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 dotenv.config();
 @Injectable()
 export class KeepAliveCronService implements OnModuleInit {
