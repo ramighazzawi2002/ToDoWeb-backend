@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsMongoId } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateToDoListDto {
   @IsNotEmpty()
@@ -7,7 +7,6 @@ export class CreateToDoListDto {
   @IsOptional()
   description: string;
 
-  @IsNotEmpty()
-  @IsMongoId()
+  @IsOptional()
   userId: string;
 }
