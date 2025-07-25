@@ -53,7 +53,7 @@ export class OptimizedCronService implements OnModuleInit {
       const taskList = tasks
         .map(
           (task, index) =>
-            `${index + 1}. ${task.taskTitle} - Due: ${new Date(task.dueDate).toLocaleString('ar-EG')}`,
+            `${index + 1}. ${task.taskTitle} - Due: ${new Date(task.dueDate).toLocaleString('ar-EG', { timeZone: 'Asia/Amman' })}`,
         )
         .join('\n');
       const emailContent = `
@@ -85,7 +85,7 @@ ${taskList}
                 (task) => `
               <li style="background: #f5f5f5; margin: 10px 0; padding: 15px; border-radius: 5px;">
                 <strong>${task.taskTitle}</strong><br>
-                <span style="color: #666;">تاريخ الاستحقاق: ${new Date(task.dueDate).toLocaleString('ar-EG')}</span><br>
+                <span style="color: #666;">تاريخ الاستحقاق: ${new Date(task.dueDate).toLocaleString('ar-EG', { timeZone: 'Asia/Amman' })}</span><br>
                 <span style="color: #666;">قائمة المهام: ${task.todoListTitle}</span>
               </li>
             `,
